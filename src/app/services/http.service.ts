@@ -12,16 +12,16 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   getPlantList(
-    ordering: string,
+    order: string,
     search?: string
   ): Observable<APIResponse<Plant>> {
-   let params = new HttpParams().set('ordering', ordering);
+   let params = new HttpParams().set('order', order);
 
    if (search) {
-     params = new HttpParams().set('ordering', ordering).set('search', search);
+     params = new HttpParams().set('order', order).set('search', search);
    }
 
-   return this.http.get<APIResponse<Plant>>(`${env.BASE_URL}/api/species-list?key=${env.key}`, {
+   return this.http.get<APIResponse<Plant>>(`${env.BASE_URL}/api/species-list`, {
      params: params,
    });
  }

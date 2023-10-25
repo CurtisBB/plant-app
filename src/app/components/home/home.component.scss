@@ -47,12 +47,12 @@
   overflow: hidden;
   border-radius: 5px;
   background-color: #202020;
-  box-shadow: 4px 3px 8px 0px rgb(200 152 44 / 22%);
+  box-shadow: 4px 3px 8px 0px rgb(106, 63, 224, 0.46);
   transition-duration: 0.3s;
   cursor: pointer;
 
   &:hover {
-    box-shadow: 4px 3px 11px 6px rgb(200 152 44 / 46%);
+    box-shadow: 4px 3px 11px 6px rgba(106, 63, 224, 0.46);
     transform: translateY(-3px);
   }
 
@@ -85,13 +85,12 @@
     color: #fff;
     font-weight: 700;
     font-size: 22px;
-    margin-bottom: 20px;
-    white-space: nowrap;
+    margin-bottom: 20px;    
     text-overflow: ellipsis;
     overflow: hidden;
   }
 
-  &-platforms {
+  &-notes {
     display: flex;
   }
 
