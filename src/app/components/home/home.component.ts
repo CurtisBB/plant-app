@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       .getPlantList(order, search)
       .subscribe((plantList: APIResponse<Plant>) => {
         this.plants = plantList.data;
-        console.log(plantList);        
+        //console.log(plantList);        
       })
   }
 

@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { environment as env } from 'src/environments/environment';
 import { APIResponse, Plant } from '../models';
 
@@ -18,11 +18,17 @@ export class HttpService {
    let params = new HttpParams().set('order', order);
 
    if (search) {
-     params = new HttpParams().set('order', order).set('search', search);
+     params = new HttpParams().set('order', order).set('q', search);
    }
 
    return this.http.get<APIResponse<Plant>>(`${env.BASE_URL}/api/species-list`, {
      params: params,
    });
+ }
+
+ getPlantDetails(id: string): Observable<Plant> {
+  const plantInfoRequest = this.http.get<Plant>(`${env.BASE_URL}/api/species/details/${id}`);
+
+  return plantInfoRequest
  }
 }
